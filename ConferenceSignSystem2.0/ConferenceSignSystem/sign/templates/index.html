@@ -1,0 +1,24 @@
+<html>
+    <head>
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <title>Conference Sign System</title>
+    </head>
+    <body>
+    <div class="container">
+        <form class="form-signin" method="post" action="/login_action/">
+            {% csrf_token %}
+            <h2>Guest system</h2>
+            <label >Username </label><br>
+            <input class="form-control" type="text" name="username" placeholder="username" required autofocus><br>
+            <label>Password </label><br>
+            <input class="form-control" type="password" name="paassword" placeholder="password" required><br>
+            <p style="color:red">{{ error }}</p><br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button><br>
+
+
+        </form>
+    </div>
+    </body>
+</html>
