@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from sign import views_interface,views_sec_interface
+from sign import views_interface,views_sec_interface,views_md5_interface
 
 app_name='sign'
 urlpatterns=[
@@ -14,6 +14,7 @@ urlpatterns=[
     url('^get_guest_list/',views_interface.get_guest_list, name='get_guest_list'),
     # ex: /api/user_sign/
     url('^user_sign/',views_interface.user_sign, name='user_sign'),
+    #-----------------------------------------------
     # http basic 认证的接口
     # ex：/api/sec_add_event/
     url('^sec_add_event/',views_sec_interface.sec_add_event, name='sec_add_event'),
@@ -25,6 +26,18 @@ urlpatterns=[
     url('^sec_get_guest_list/', views_sec_interface.sec_get_guest_list, name='sec_get_guest_list'),
     # ex: /api/sec_user_sign/
     url('^sec_user_sign/', views_sec_interface.sec_user_sign, name='sec_user_sign'),
+    #---------------------------------------------------
+    # md5摘要认证
+    # ex：/api/add_event_with_md5/
+    url('^add_event_with_md5/', views_md5_interface.add_event_with_md5, name='add_event_with_md5'),
+    # ex: /api/add_guest_with_md5/
+    url('^add_guest_with_md5/', views_md5_interface.add_guest_with_md5, name='add_guest_with_md5'),
+    # ex: /api/get_event_list_with_md5/
+    url('^get_event_list_with_md5/', views_md5_interface.get_event_list_with_md5, name='get_event_list_with_md5'),
+    # ex: /api/get_guest_list_with_md5/
+    url('^get_guest_list_with_md5/', views_md5_interface.get_guest_list_with_md5, name='get_guest_list_with_md5'),
+    # ex: /api/user_sign_with_md5/
+    url('^user_sign_with_md5/', views_md5_interface.user_sign_with_md5, name='user_sign_with_md5'),
 ]
 
 

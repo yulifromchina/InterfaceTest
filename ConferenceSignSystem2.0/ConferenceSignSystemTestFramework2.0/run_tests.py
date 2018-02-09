@@ -17,7 +17,7 @@ if __name__=='__main__':
     fp = open(filename,'wb')
     runner = HTMLTestRunner(stream=fp,title='ConferenceSignSystem Interface Test Report',
                             description="Implementation Example with:")
-    discover = unittest.defaultTestLoader.discover(test_dir, pattern='http_*.py')
+    discover = unittest.defaultTestLoader.discover(test_dir, pattern='md5_*.py')
     runner.run(discover)
 
     fp.close()
