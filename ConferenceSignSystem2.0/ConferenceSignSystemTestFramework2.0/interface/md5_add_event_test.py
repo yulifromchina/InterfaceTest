@@ -32,6 +32,7 @@ class AddEventTest(unittest.TestCase):
     def tearDown(self):
         print(self.result)
 
+
     def test_add_event_all_null(self):
         """所有参数为空的情况"""
         payload = {'eid':'','limit':'','address':'','start_time':'','name':'','status':'',

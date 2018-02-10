@@ -5,6 +5,19 @@ from HTMLTestRunner import HTMLTestRunner
 import  unittest
 from db_fixture import test_data
 import time
+from util import send_email
+
+global user_list
+user_list = ['xxxxx@qq.com']
+
+
+def send_result(filepath, filename):
+    email_obj = send_email.SendEmail()
+    email_obj.add_attachment(file_path=filepath, file_name=filename)
+    subject = '自动化测试报告'
+    content='测试结果见附件'
+    email_obj.send_email(user_list,sub=subject,content=content)
+    email_obj.close()
 
 
 test_dir='./interface'
@@ -19,5 +32,8 @@ if __name__=='__main__':
                             description="Implementation Example with:")
     discover = unittest.defaultTestLoader.discover(test_dir, pattern='md5_*.py')
     runner.run(discover)
-
+    
     fp.close()
+    
+    # 发送带附件的邮件
+    send_result(filename,now+'_result.html')

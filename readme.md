@@ -30,6 +30,10 @@ HTTP BASIC认证：使用"username:password"进行base64编码
 
 md5摘要认证：”client_time+约定的密钥“计算md5
 
+3.增加邮件自动发送功能：
+
+用例执行完毕后自动发送测试报告
+
 ### Python版本与依赖库：
 
 python3.6
